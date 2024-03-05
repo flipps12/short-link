@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
 });
 app.get('/hora', async (req, res) => {
     fecha = await pool.query('SELECT NOW()')
+    console.log('peticion:')
+    console.log(fecha)
     res.send(fecha)
 })
 // Iniciar el servidor
