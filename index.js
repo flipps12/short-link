@@ -16,7 +16,7 @@ const pool = new pg.Pool({
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-app.get('hora', async (req, res) => {
+app.get('/hora', async (req, res) => {
     fecha = await pool.query('SELECT NOW()')
     res.send(fecha)
 })
