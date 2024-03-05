@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
-const pg = require('pg')
+const { Pool } = require('pg')
+require('dotenv').config()
 // Crear una nueva aplicación Express
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
@@ -8,8 +9,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 const port = 3000 || process.env.PORT;
 
 
-const pool = new pg.Pool({
-    connectionString: process.env.POSTGRES_URL,
+const pool = new Pool({
+    connectionString: "postgres://default:HF9aO5Nkjiyz@ep-late-heart-a4xxfre5-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
 })
 
 // Definir una ruta de prueba
