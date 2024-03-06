@@ -10,7 +10,7 @@ const port = 3000 || process.env.PORT;
 
 
 const pool = new Pool({
-    connectionString: "postgres://dbshortlink_v1gc_user:rBilG0fpRi8Mc7LXFh3o0Ux6290AHoGB@dpg-cnkah06ct0pc73dse43g-a.oregon-postgres.render.com/dbshortlink_v1gc",
+    ",
 ssl: true,
 })
 
