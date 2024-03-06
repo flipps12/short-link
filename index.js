@@ -10,7 +10,7 @@ const port = 3000 || process.env.PORT;
 
 
 const pool = new Pool({
-    connectionString: "postgres://default:HF9aO5Nkjiyz@ep-late-heart-a4xxfre5-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
+    connectionString: "postgres://dbshortlink_v1gc_user:rBilG0fpRi8Mc7LXFh3o0Ux6290AHoGB@dpg-cnkah06ct0pc73dse43g-a.oregon-postgres.render.com/dbshortlink_v1gc",
 })
 
 // Definir una ruta de prueba
