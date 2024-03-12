@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 10px;
+}
