@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+#urlsContainer {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerUrl, .form {
+    display: flex;
+    width: 86%;
+    flex-direction: row;
+    background-color: #bbb;
+    padding: 2%;
+    border-radius: 20px;
+}
+.subContainer {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+.url1 {
+    font-size: 20px;
+}
+.qr {
+    width: 20%;
+    border-radius: 10px;
+}
