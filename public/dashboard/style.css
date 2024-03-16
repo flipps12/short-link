@@ -1,31 +1,145 @@
-body {
-    margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Iceland:700|Iceland:400');
+
+:root {
+    --text-50: #f5edf8;
+    --text-100: #eadaf1;
+    --text-200: #d6b5e3;
+    --text-300: #c190d5;
+    --text-400: #ad6bc7;
+    --text-500: #9846b9;
+    --text-600: #7a3894;
+    --text-700: #5b2a6f;
+    --text-800: #3d1c4a;
+    --text-900: #1e0e25;
+    --text-950: #0f0712;
+
+    --background-50: #f5ecf9;
+    --background-100: #ecd9f2;
+    --background-200: #d9b3e6;
+    --background-300: #c68cd9;
+    --background-400: #b366cc;
+    --background-500: #9f40bf;
+    --background-600: #803399;
+    --background-700: #602673;
+    --background-800: #40194d;
+    --background-900: #200d26;
+    --background-950: #100613;
+
+    --primary-50: #f7eafa;
+    --primary-100: #eed5f6;
+    --primary-200: #ddacec;
+    --primary-300: #cc82e3;
+    --primary-400: #bb59d9;
+    --primary-500: #aa2fd0;
+    --primary-600: #8826a6;
+    --primary-700: #661c7d;
+    --primary-800: #441353;
+    --primary-900: #22092a;
+    --primary-950: #110515;
+
+    --secondary-50: #f7e9fc;
+    --secondary-100: #f0d3f8;
+    --secondary-200: #e0a6f2;
+    --secondary-300: #d17aeb;
+    --secondary-400: #c14ee4;
+    --secondary-500: #b221de;
+    --secondary-600: #8e1bb1;
+    --secondary-700: #6b1485;
+    --secondary-800: #470d59;
+    --secondary-900: #24072c;
+    --secondary-950: #120316;
+
+    --accent-50: #f8e7fd;
+    --accent-100: #f1d0fb;
+    --accent-200: #e3a1f7;
+    --accent-300: #d571f4;
+    --accent-400: #c742f0;
+    --accent-500: #b913ec;
+    --accent-600: #940fbd;
+    --accent-700: #6f0b8e;
+    --accent-800: #4a085e;
+    --accent-900: #25042f;
+    --accent-950: #130218;
 }
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: var(--background-950);
+}
+
 #urlsContainer {
     display: flex;
     width: 100%;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.containerUrl, .form {
+
+.containerUrl,
+.form {
     display: flex;
     width: 86%;
     flex-direction: row;
-    background-color: #bbb;
-    padding: 2%;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--background-900);
+    padding: 2% 13px;
     border-radius: 20px;
 }
+
+.form {
+    flex-direction: column;
+    justify-content: center;
+}
+
 .subContainer {
     display: flex;
     width: 80%;
     flex-direction: column;
 }
-.url1 {
-    font-size: 20px;
+
+.url,
+.trash {
+    color: var(--accent-50);
+    font-size: 15px;
 }
+
+.url1,
+.url2 {
+    font-size: 17px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: var(--accent-50);
+}
+
 .qr {
     width: 20%;
     border-radius: 10px;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    color: var(--accent-50);
+    margin: 6px 4px;
+    font-size: 15px;
+    border-bottom: 1px solid var(--accent-50);
+    width: 95%;
+}
+
+input::placeholder {
+    margin-left: 10px;
+}
+
+button {
+    border: none;
+    border: solid 1px var(--accent-50);
+    background-color: var(--accent-700);
+    padding: 10px;
+    height: 30px;
+    width: 50%;
+    border-radius: 15px;
+    margin-bottom: 8px;
 }

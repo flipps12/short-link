@@ -75,5 +75,9 @@ const searchUrl = async (url_recortado: string) => {
     const result = await sql`SELECT * FROM urls WHERE url_recortada=${url_recortado};`;
     return result
 }
+const deleteurl = async (id: number, usuario_id: number) => {
+    const result = await sql`DELETE FROM urls WHERE id=${id} AND usuario_id=${usuario_id};`;
+    return result
+}
 
-export { createAccount, verifyPassword, verifyPasswordID, createLink, searchUrl, viewLink };
+export { createAccount, verifyPassword, verifyPasswordID, createLink, searchUrl, viewLink, deleteurl };

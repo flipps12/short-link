@@ -3,7 +3,7 @@ import express from 'express';
 import { Request, Response, NextFunction } from 'express';
 import { config } from 'dotenv';
 import path from 'path';
-import { createAccount, verifyPassword, createLink, searchUrl, viewLink } from './postgres';
+import { createAccount, verifyPassword, createLink, searchUrl, viewLink, deleteurl } from './postgres';
 import bodyParser from 'body-parser';
 import jwt from 'jsonwebtoken';
 import cookieParser from 'cookie-parser';
@@ -76,6 +76,13 @@ app.post('/api/createurl', verificarToken, async (req, res) => {
 app.get('/api/geturls', verificarToken, async (req, res) => {
     const id: any = req.user?.usuario.id;
     const result = await viewLink(id)
+    res.json(result)
+})
+app.post('/api/deleteurls', verificarToken, async (req, res) => {
+    const id: any = req.user?.usuario.id;
+    const idUrl = req.body.id;
+    if (idUrl == '' || id == '') res.json({status: 'error'})
+    const result = await deleteurl(idUrl, id)
     res.json(result)
 })
 app.get(`/s/:link`, async (req, res) => {
