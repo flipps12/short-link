@@ -75,6 +75,8 @@ nav {
 	display: flex;
 	flex-direction: row;
 	padding-inline: 15px;
+	width: 96%;
+	padding-inline: 2%;
 	margin-bottom: 5vh;
 	border-bottom: 2px solid var(--accent-50);
 }
@@ -88,9 +90,27 @@ ul {
 }
 h1 {
 	flex: 1;
+	font-size: 27px;
 	margin: 0;
 }
 a {
 	color: var(--accent-50);
-	font-size: 20px;
+	font-size: 25px;
+}
+
+#loading {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-inline: 8px solid transparent;
+    border-block: 8px solid var(--accent-700);
+    animation: loading 1s infinite;
+}
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
 }

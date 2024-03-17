@@ -1,5 +1,6 @@
 "use strict"
 const urlsContiner = document.getElementById('urlsContainer');
+const loading = document.getElementById('loading')
 
 fetch('/api/geturls')
   .then(response => {
@@ -14,6 +15,7 @@ fetch('/api/geturls')
     // Muestra los datos en la consola
     console.log(data);
     let count = 0
+    loading.remove();
     data.forEach(i => {
       count++
         urlsContiner.innerHTML += `<div class="containerUrl">
@@ -81,10 +83,9 @@ const addUrl = async () =>{
   .then(response => response.json())
   .then(data => {
     console.log(data.status)
-    if (data.status) {
+    if (data.status && data.status !== 'registered') {
       location.reload()
-    }
-    else if (data.status = 'registered'){
+    } else if (data.status = 'registered'){
       labelError.textContent = "Url en uso"
       return
     } else if (data.status = 'error'){

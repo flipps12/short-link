@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+    color: var(--text-50);
+
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 86%;
+    padding-block: 2%;
+    gap: 10px;
+    color: var(white);
+}
+
+label  {
+    color: var(--text-50);
+}
