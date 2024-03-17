@@ -1,5 +1,4 @@
 "use strict"
-const aSignup = document.getElementById('aSingup')
 const aLogin = document.getElementById('aLogin')
 
 
@@ -16,7 +15,6 @@ fetch('/api/protected')
     // Muestra los datos en la consola
     console.log(data);
     if (data.auth){
-      aSignup.textContent = 'AUTH: TRUE'
       aLogin.textContent = data.id.usuario.nombre_usuario
       const info = data.id
     }    

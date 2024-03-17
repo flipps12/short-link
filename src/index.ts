@@ -52,16 +52,19 @@ app.post('/login', async (req, res) => {
         res.send({ auth: true, token });
     } else res.json({auth: false})
 })
+
 app.post('/singup', async (req, res) => {
     const { user, password } = req.body
     if (user == '' || password == '') res.send('error')
-    console.log(await createAccount(user, password))
-    res.redirect('/')
+    const result = await createAccount(user, password);
+    res.json({ status: await result})
 })
+
 app.get('/api/protected', verificarToken, (req, res) => {
     //console.log(req.user)
     res.json({auth: true, id: req.user})
 })
+
 app.post('/api/createurl', verificarToken, async (req, res) => {
     const id: any = req.user?.usuario.id;
     const { url_original, url_recortada} = req.body
@@ -71,13 +74,15 @@ app.post('/api/createurl', verificarToken, async (req, res) => {
         res.json({status: 'registered'})
     } else if (await result) {
         res.json({ status: true })
-    }
+    } else res.json({ status: 'errors'})
 })
+
 app.get('/api/geturls', verificarToken, async (req, res) => {
     const id: any = req.user?.usuario.id;
     const result = await viewLink(id)
     res.json(result)
 })
+
 app.post('/api/deleteurls', verificarToken, async (req, res) => {
     const id: any = req.user?.usuario.id;
     const idUrl = req.body.id;
@@ -85,6 +90,7 @@ app.post('/api/deleteurls', verificarToken, async (req, res) => {
     const result = await deleteurl(idUrl, id)
     res.json(result)
 })
+
 app.get(`/s/:link`, async (req, res) => {
     const link = req.params.link
     const newlink = await searchUrl(link)
@@ -93,6 +99,9 @@ app.get(`/s/:link`, async (req, res) => {
         res.redirect('http://' + await newlink[0].url_original)
     } else res.redirect('/')
 })
+
+// listen
+
 app.listen(port, () => {
     console.log(`En escucha en ${port}`)
 })
