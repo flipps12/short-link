@@ -40,7 +40,7 @@ app.get('/dashboard', async (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'public', 'dashboard', 'dashboard.html'));
 })
 
-app.post('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
     const { user, password } = req.body
     if (user == '' || password == '') res.send('error')
     const resultVerify = verifyPassword(user, password)
@@ -53,7 +53,7 @@ app.post('/login', async (req, res) => {
     } else res.json({auth: false})
 })
 
-app.post('/singup', async (req, res) => {
+app.post('/api/singup', async (req, res) => {
     const { user, password } = req.body
     if (user == '' || password == '') res.send('error')
     const result = await createAccount(user, password);
@@ -102,6 +102,6 @@ app.get(`/s/:link`, async (req, res) => {
 
 // listen
 
-app.listen(port, () => {
+app.listen(port,'192.168.0.89', () => {
     console.log(`En escucha en ${port}`)
 })

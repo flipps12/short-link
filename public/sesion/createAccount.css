@@ -16,7 +16,9 @@ form {
     gap: 10px;
     color: var(white);
 }
-
+input {
+    color: white;
+}
 label  {
     color: var(--text-50);
 }

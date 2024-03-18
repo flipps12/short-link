@@ -89,7 +89,7 @@ label {
     border: none;
     text-align: center;
     border: solid 1px var(--accent-50);
-    background-color: var(--accent-700);
+    background-color: var(--primary);
     padding: 10px;
     width: 50%;
     border-radius: 15px;

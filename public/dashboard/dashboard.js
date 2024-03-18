@@ -86,10 +86,10 @@ const addUrl = async () =>{
     if (data.status && data.status !== 'registered') {
       location.reload()
     } else if (data.status = 'registered'){
-      labelError.textContent = "Url en uso"
-      return
+      labelError.textContent = "Url en uso";
+      return;
     } else if (data.status = 'error'){
-      labelError.textContent = "Internal server Error"
+      labelError.textContent = "Internal server Error";
       //location.reload()
     }
     // Puedes manejar la respuesta del servidor aquí
