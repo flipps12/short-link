@@ -13,8 +13,8 @@
     flex-direction: row;
     align-items: center;
     gap: 5px;
-    background-color: var(--background-900);
-    padding: 2% 13px;
+    border: solid 2px #fff;
+    padding: 2% 6px;
     border-radius: 20px;
 }
 
@@ -25,7 +25,7 @@
 
 .subContainer {
     display: flex;
-    width: 80%;
+    width: 75%;
     flex-direction: column;
 }
 
@@ -45,6 +45,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .qrContainer {
     position: relative;
@@ -57,7 +59,6 @@
     left: 50%;
     transform: translate(-50%, -50%); /* Centra el icono dentro del contenedor */
     z-index: 20;
-    color: var(--background-800);
     font-size: 30px;
 }
 .qr {

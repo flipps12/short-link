@@ -97,6 +97,7 @@ h1 {
 	font-size: 27px;
 	margin: 0;
 }
+#aLogin,
 a {
 	color: var(--accent-50);
 	font-size: 25px;

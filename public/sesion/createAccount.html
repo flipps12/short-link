@@ -18,9 +18,9 @@
     <form action="/singup" method="post">
         <h2>crear cuenta</h2>
         <label for="user">usuario:</label>
-        <input type="text" name="user">
+        <input type="text" name="user" id="user">
         <label for="user">contraseña:</label>
-        <input type="text" name="password">
+        <input type="password" name="password" id="password">
         <button type="submit">enviar</button>
     </form>
     <form action="/api/login" method="post">
@@ -31,5 +31,6 @@
         <input type="password" name="password">
         <button type="submit">enviar</button>
     </form>
+    <script type="text/javascript" src="/sesion/create.js"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@ form {
 }
 input {
     color: white;
+    background-color: #000;
 }
 label  {
     color: var(--text-50);

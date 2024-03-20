@@ -56,9 +56,14 @@ app.post('/api/login', async (req, res) => {
 app.post('/api/singup', async (req, res) => {
     const { user, password } = req.body
     if (user == '' || password == '') res.send('error')
-    const result = await createAccount(user, password);
-    res.json({ status: await result})
-})
+    try {
+        const result = await createAccount(user, password);
+        res.json({ status: await result})
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un error en el servidor');
+    }
+});
 
 app.get('/api/protected', verificarToken, (req, res) => {
     //console.log(req.user)
@@ -101,7 +106,7 @@ app.get(`/s/:link`, async (req, res) => {
 })
 
 // listen
-
-app.listen(port,'192.168.0.89', () => {
+//,'192.168.0.89'
+app.listen(port, () => {
     console.log(`En escucha en ${port}`)
 })
