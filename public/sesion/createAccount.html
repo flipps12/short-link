@@ -15,21 +15,16 @@
             <li id="aLogin"><a href="/login">Login</a></li>
         </ul>
     </nav>
-    <form action="/singup" method="post">
+    <form>
         <h2>crear cuenta</h2>
-        <label for="user">usuario:</label>
-        <input type="text" name="user" id="user">
-        <label for="user">contraseña:</label>
-        <input type="password" name="password" id="password">
-        <button type="submit">enviar</button>
-    </form>
-    <form action="/api/login" method="post">
         <h2>Iniciar sesion</h2>
         <label for="user">usuario:</label>
-        <input type="text" name="user">
-        <label for="user">contraseña:</label>
-        <input type="password" name="password">
-        <button type="submit">enviar</button>
+        <input type="text" name="user" id="user">
+        <label for="password">contraseña:</label>
+        <input type="password" name="password" id="password">
+        <label id="labelError"></label>
+        <button type="button" onclick="sendForm('/api/login')">Login</button>
+        <button type="button" onclick="sendForm('/api/singup')">Singup</button>
     </form>
     <script type="text/javascript" src="/sesion/create.js"></script>
 </body>

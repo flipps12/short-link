@@ -49,16 +49,16 @@ app.post('/api/login', async (req, res) => {
         //console.log(await resultVerify)
         const token = jwt.sign({ usuario: await resultVerify }, AUTH_SECRET_KEY, { expiresIn: '100d' });
         res.cookie('jwtToken', token, { maxAge: 99999999, httpOnly: true });
-        res.send({ auth: true, token });
+        res.send({ auth: true });
     } else res.json({auth: false})
 })
 
 app.post('/api/singup', async (req, res) => {
-    const { user, password } = req.body
-    if (user == '' || password == '') res.send('error')
     try {
+        const { user, password } = req.body
+        if (user == '' || password == '') return
         const result = await createAccount(user, password);
-        res.json({ status: await result})
+        res.json({ status: result})
     } catch (error) {
         console.log(error);
         res.status(500).send('Hubo un error en el servidor');

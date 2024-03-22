@@ -15,6 +15,9 @@ form {
     padding-block: 2%;
     gap: 10px;
     color: var(white);
+    border: 1px solid #fff;
+    padding: 3%;
+    border-radius: 10px;
 }
 input {
     color: white;

@@ -36,7 +36,7 @@ const createAccount = async (user: string, password: string) => {
 
         // Si el usuario ya existe, no hacemos nada
         if (checkName[0].count > 0) {
-            return false; // El usuario ya existe
+            return 'registered'; // El usuario ya existe
         }
 
         // Si el usuario no existe, lo insertamos
